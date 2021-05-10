@@ -3,7 +3,12 @@ name = "text_tree_elements"
 version = "0.1.0"
 authors = ["Anton Gepting <anton.gepting@gmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "Rust language library for building text trees"
+readme = "README.md"
+keywords = ["cli", "text", "tree"]
+categories = ["command-line-utilities", "command-line-interface"]
+repository = "https://github.com/AntonGepting/text-tree-elements-rs"
+include = ["/src/**/*", "/Cargo.toml", "/README.md", "/LICENSE.md", "/examples/*"]
 
 [dependencies]
