@@ -2,7 +2,7 @@
 pub const EMPTY: &str = "";
 
 /// `"│  "`
-pub const V_LINE: &str = "│  ";
+pub const I_BRANCH: &str = "│  ";
 /// `"   "`
 pub const PADDING_SPACES: &str = "   ";
 
@@ -80,7 +80,7 @@ impl<'a> Default for TextTreeElements<'a> {
             prefix: TextTreeSymbols {
                 root: EMPTY,
                 first: EMPTY, // currently not used
-                middle: V_LINE,
+                middle: I_BRANCH,
                 last: PADDING_SPACES,
             },
             // current branch symbol
