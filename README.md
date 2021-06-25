@@ -1,6 +1,9 @@
 # Text Tree Elements
 
 [![Build Status](https://github.com/AntonGepting/text-tree-elements-rs/actions/workflows/actions.yml/badge.svg)](https://github.com/AntonGepting/text-tree-elements-rs/actions)
+[![Crates.io](https://img.shields.io/crates/v/text_tree_elements.svg)](https://crates.io/crates/text_tree_elements)
+[![Documentation](https://docs.rs/text_tree_elements/badge.svg)](https://docs.rs/text_tree_elements)
+
 
 `Text Tree Elements` is a small Rust language library, containing few tiny
 functions for preparing tree like structured items for displaying them in TUI
@@ -47,17 +50,22 @@ listing output similar to `tree` command.
     └─ ...
     ```
 
-## Customization
-
-Use custom symbols:
-```
-let tree = TextTreeElements::new(["", "", "|  ", "   "], ["", "", "|- ", "'- "]);
-```
-
 ## Examples
 
-Default (classic branch glyphs):
+In examples directory can be found recursive files list program example with
+some variations for demonstration of different output styles.
 
+### Default
+
+Default init (classic branch glyphs):
+```
+// init branch and prefix arrays:
+// `[root, first, middle, last]`, `[root, first, middle, last]`
+// `["", "", "├─ ", "└─ "]`, `["", "", "│  ", "   "]`
+let tree = TextTreeElements::default();
+```
+
+Output:
 ```
 .
 ├─ TODO.md
@@ -77,8 +85,19 @@ Default (classic branch glyphs):
 └─ Cargo.toml
 ```
 
+### Custom
 
-Custom (user given branch glyphs):
+Custom init (user given branch glyphs):
+
+```
+// init custom branch and prefix arrays:
+// `[root, first, middle, last]`, `[root, first, middle, last]`
+// `["", "", "|- ", "'- "]`, `["", "", "|  ", ",  "]`
+let tree = TextTreeElements::new(["", "", "|  ", "   "], ["", "", "|- ", "'- "]);
+```
+
+Output:
+
 ```
 .
 |- TODO.md
@@ -97,3 +116,16 @@ Custom (user given branch glyphs):
 |- .gitignore
 '- Cargo.toml
 ```
+
+## License
+
+`text-tree-elements` library is licensed under the MIT license. Please read the
+[license file](LICENSE.md) in the repository for more information.
+
+
+## See also
+
+- [Rust programming language](https://www.rust-lang.org/)
+- [crates.io](https://www.crates.io/)
+- [docs.rs](https://www.docs.rs/)
+- [rust-clippy](https://github.com/rust-lang/rust-clippy)
